@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-training-refactoring</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row ml-3 mt-2">
+        <div class="col-md-6">
+            <label class="row" for="editor">Custom HTML:<b><sup class="ml-2">Look at initalized code to get an idea of markup</sup></b></label>
+            <p class="row small-text w-100">You can use normal tags or Shorthand tags: h = html, bo = body, d = div, sc
+                = script, bu = button,
+                le = legend, ta = table, tby = tbody, thd = thead, tft = tfoot, s = span, sel = select, op = option, la
+                = label, in = input, Use: @ to define attributes, comma(,) to signify spacing.</p>
+            <div class="row" id="editor">d@class=container-fluid
+    ta@class=table,table-striped
+        thd
+            th@text=Row,1
+            th@text=Row,2
+        tby
+            tr
+                td@text=10
+                td@text=10
+            tr
+                td@text=10
+                td@text=10
+    div
+    d
+                a@href=http://www.20min.ch@class=btn,btn-primary@id=whathwat@text=Click,me</div>
+            <button id="parseHtmlButton" class="row btn btn-primary w-100">Parse To HTML</button>
+        </div>
+        <div class="col-md-6">
+            <label class="row" for="editor">Output HTML:</label>
+            <div class="row w-100 pre-scrollable" id="outputArea">
+            </div>
+            <button id="resetOutputArea" class="row btn btn-danger w-100">Reset Output Area</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+<script src="js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/initiliazer/aceInitializer.js"></script>
+<script src="js/smellyCode.js"></script>
+
+</body>
+</html>

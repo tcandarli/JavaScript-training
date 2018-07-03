@@ -1,0 +1,14 @@
+#editor {
+    width: 100%;
+    height: 84.4vh;
+    font-size: 1.2rem;
+}
+#outputArea{
+    border:1px solid black;
+    height:90vh !important;
+    max-height: none !important;
+}
+
+.small-text{
+    font-size:0.8rem;
+}
