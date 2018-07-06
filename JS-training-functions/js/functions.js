@@ -92,13 +92,15 @@ function findSocialLevel(pSalary) {
 }
 
 function findEvenNumbersTo(pLimit) {
-    let res = [];
-    for (let i = 0; i < pLimit; i++) {
-        if (i % 2 === 0) {
-            res.push(i);
-        }
-    }
-}
+    return new Array(pLimit).fill(1)
+    .map(function(pValue, pIndex){
+       return pIndex;
+    })
+    .filter(function(pValue){
+        return pValue % 2 == 0;
+    })
+    .filter(a => a != 0);
+  }
 
 function findTheSequenceTo(pLimit, pStep) {
 
