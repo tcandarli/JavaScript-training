@@ -22,7 +22,7 @@ function calculateHypotenuse(a, b) {
 }
 
 function reverse(pWord) {
-    return pWord.split("").reverse.join(""); //Converts string to array then Reverses array then Converts array to string
+    return pWord.split("").reverse().join(""); //Converts string to array then Reverses array then Converts array to string
 }
 
 function getCurrentDate(myDate) { // dd/mm/yyy  
