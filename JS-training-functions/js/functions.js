@@ -26,10 +26,16 @@ function reverse(pWord) {
 }
 
 function getCurrentDate(myDate) { // dd/mm/yyy  
-   let options = {day:"2-digit", month:"2-digit", year:"numeric"};
-   return myDate
-            .toLocaleDateString('de-DE')
-}
+    let year = myDate.getFullYear();
+    let month = myDate.getMonth() + 1;
+    let day = myDate.getDate(); // Get the day 
+  
+      return   day.toString().padStart(2, '0').concat("/")
+                 .concat(month.toString().padStart(2, '0'))
+                 .concat("/")
+                 .concat(year);
+  }
+  
 
 function rectngleArea(pLongEdge, pShortEdge) {
     return Area = pLongEdge * pShortEdge; // Calculates area of rectangle
