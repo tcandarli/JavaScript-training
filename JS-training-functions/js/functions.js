@@ -4,10 +4,6 @@
  * exactly required from the functions
  */
 
-/**
- * We will continue and write all functions as soon as possible.
- * Sorry for being late
- */
 
 function sum(a, b) {
     return a + b;
