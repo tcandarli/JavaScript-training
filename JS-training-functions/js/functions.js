@@ -38,11 +38,8 @@ function rectngleArea(pLongEdge, pShortEdge) {
 }
 
 function circleArea(pRadius) {
-    //let Area = 3.14 * Math.pow(pRadius, 2) //Calculates area of circle, 3.14*9 = 28.26
-   // return 
-    let Area = 3.14 * (pRadius ** 2) //Calculates area of circle, 3.14*9 = 28.26
-     Math.round(Area); // Round 28.26 to 28
-    return Area;
+   return Math.round(Math.PI * pRadius * pRadius)
+    
 }
 
 function getMonthName(pDate) {
