@@ -48,7 +48,7 @@ describe('Test Suite - Simple Functions', () => {
     
     it('10) Write a function that returns the horoscope of the given date.', () => {
         let result = getHoroscope(new Date(2017, 9-1, 4));
-        result.should.be.equal("Başak");
+        result.should.be.equal("Virgo");
     });
     
     it('11) Write a function that calculates factorial of a number.', () => {
