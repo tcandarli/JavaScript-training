@@ -106,8 +106,8 @@ function capitalize(pWord) {
 // Same as capitalize, but try to solve it with a different approach
 function capitalizeAlternative(pWord) {
     let arr = pWord.split("");
-    arr[0] = arr[0] + toUpperCase();
-    return arr;
+    arr[0] = arr[0].toUpperCase();
+    return arr.join("");
 }
 
 function findSocialLevel(pSalary) {
