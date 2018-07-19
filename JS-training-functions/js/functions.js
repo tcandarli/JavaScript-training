@@ -111,7 +111,7 @@ function capitalizeAlternative(pWord) {
 }
 
 function findSocialLevel(pSalary) {
-      switch (pSalary) {
+    switch (pSalary) {
         case 150000:
             return "GOOD";
         default:
@@ -133,13 +133,13 @@ function findEvenNumbersTo(pLimit) {
 
 function findTheSequenceTo(pLimit, pStep) {
     return new Array(pLimit)
-                .map(function(pValue, pIndex){
-                    return pIndex;
-                })
-                .filter(function(pValue){
-                    return pValue % pStep == 0;
-                })
-  }
+        .map(function (pValue, pIndex) {
+            return pIndex;
+        })
+        .filter(function (pValue) {
+            return pValue % pStep == 0;
+        })
+}
 
 
 // Same as findTheSequenceTo, but try to solve it with a different approach
@@ -148,10 +148,7 @@ function findTheSequenceToAlternative(pLimit, pStep) {
 }
 
 function concatSpecially(pFirstWord, pSecondWord) {
-    pFirstWord = pFirstWord.split("").shift();
-    pSecondWord = pSecondWord.split("").shift();
-
-
+    return pFirstWord.slice(1, pFirstWord.length).concat(pSecondWord.slice(1, pSecondWord.length))
 
 
 }
