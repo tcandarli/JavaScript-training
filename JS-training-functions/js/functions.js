@@ -183,15 +183,15 @@ function findWordsByChars(inputText, searchCharacters) {
 }
 
 function generateRandomNumbers() {
-
+    return Math.round(Math.random() * max) + min;
 }
 
 
-
+/*
 function getRandom(max, min = 0) {
-    return
+    return Math.round(Math.random() * max) + min;
 }
-
+*/
 function suggestPassword() {
     const arr = new Array(10).fill(1);
     const randomIndex = generateRandomNumbers(9, 0);
