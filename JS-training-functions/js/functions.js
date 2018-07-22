@@ -175,6 +175,9 @@ function sumEventNumbersTo(pLimit) {
 }
 
 function toCamelCase(pSentence) {
+    return pSentence.split(" ")
+                    .map(pWord => capitalize(pWord))
+                    .join("");
 
 }
 
