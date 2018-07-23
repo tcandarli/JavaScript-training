@@ -53,6 +53,10 @@ let person = {
 				{
 					name: "Erdem",
 					lastname: "Ozcan",
+				},
+				{
+					name: "Bahar",
+					lastname:"Ozcan",
 				}
 			]
 		},
@@ -77,6 +81,10 @@ let person = {
 					name: "Memnune",
 					lastname: "Akin"
 
+				},
+				{
+					name: "Emre",
+					lastname:"Akin",
 				}
 			]
 
@@ -108,6 +116,11 @@ let person = {
 					name: "Sevval",
 					lastname: "Ozen",
 					age: 12
+				},
+				{
+					name: "Cemal",
+					lastname:"Ozen",
+					age: 6,
 				}
 			]
 		},
@@ -153,3 +166,4 @@ console.log("Age of 1st grandchild of 1st aunt: ", person.Aunt[0].children[0].ch
 console.log("Name of 2nd aunt: ", person.Aunt[1].name);
 console.log("Name of 1st cousin from 2nd aunt: ", person.Aunt[1].children[0].name);
 console.log("Age of 1st cousin from 2nd aunt: ", person.Aunt[1].children[0].age);
+console.log("Age of 2nd cousin from 2nd aunt: ", person.Aunt[0].children[2].age);
