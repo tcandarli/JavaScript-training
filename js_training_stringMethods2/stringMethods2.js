@@ -118,27 +118,27 @@ countTriple("a") // 0
 // equalIsNot("noisxxnotyynotxisi") → true
 // */
 
-// function equalIsNot(str) {
-//     countIs = 0;
-//     countNot = 0;
-//     for (var i = 0; i < str.length; i++) {
-//         if (str.substr(i, 2) == "is") {
-//             countIs++;
-//         }
-//         if (str.substr(i, 3) == "not") {
-//             countNot++;
-//         }
-//     }
-//     if (countIs == countNot) {
-//         console.log("true");
-//     } else {
-//         console.log("false");
-//     }
-// }
+function equalIsNot(str) {
+    countIs = 0;
+    countNot = 0;
+    for (var i = 0; i < str.length; i++) {
+        if (str.substr(i, 2) == "is") {
+            countIs++;
+        }
+        if (str.substr(i, 3) == "not") {
+            countNot++;
+        }
+    }
+    if (countIs == countNot) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+}
 
-// equalIsNot("This is not") // false
-// equalIsNot("This is notnot") // true
-// equalIsNot("noisxxnotyynotxisi") // true
+equalIsNot("This is not") // false
+equalIsNot("This is notnot") // true
+equalIsNot("noisxxnotyynotxisi") // true
 
 // /* Question5
 // A sandwich is two pieces of bread with something in between. Return the string 
