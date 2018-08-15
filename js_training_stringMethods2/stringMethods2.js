@@ -136,9 +136,9 @@ function equalIsNot(str) {
     }
 }
 
-equalIsNot("This is not") // false
-equalIsNot("This is notnot") // true
-equalIsNot("noisxxnotyynotxisi") // true
+// equalIsNot("This is not") // false
+// equalIsNot("This is notnot") // true
+// equalIsNot("noisxxnotyynotxisi") // true
 
 // /* Question5
 // A sandwich is two pieces of bread with something in between. Return the string 
