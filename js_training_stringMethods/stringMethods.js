@@ -1,138 +1,225 @@
-// split() method
+/* Question 1
+Given a string, return true if the first 2 chars in the string also 
+appear at the end of the string, such as with "edited".
 
-var str = "In 1993, the National Center for Supercomputing Applications (NCSA), a unit of the University of Illinois at Urbana-Champaign, released NCSA Mosaic, the first popular graphical Web browser, which played an important part in expanding the growth of the nascent World Wide Web. In 1994, a company called Mosaic Communications was founded in Mountain View, California and employed many of the original NCSA Mosaic authors to create Mosaic Netscape. However, it intentionally shared no code with NCSA Mosaic. The internal codename for the company's browser was Mozilla, which stood for Mosaic killer, as the company's goal was to displace NCSA Mosaic as the world's number one web browser. The first version of the Web browser, Mosaic Netscape 0.9, was released in late 1994. Within four months it had already taken three-quarters of the browser market and became the main browser for the Internet in the 1990s. To avoid trademark ownership problems with the NCSA, the browser was subsequently renamed Netscape Navigator in the same year, and the company took the name Netscape Communications. Netscape Communications realized that the Web needed to become more dynamic. Marc Andreessen, the founder of the company believed that HTML needed a glue language that was easy to use by Web designers and part-time programmers to assemble components such as images and plugins, where the code could be written directly in the Web page markup";
-var arrayStr = str.split(" ");
-var count = 0;
-for (var i = 0; i < arrayStr.length; i++) {
-    if (arrayStr[i] == "Netscape") {
-        count++
-    }
-}
-console.log(count); // 4
+// Sample output
+frontAgain("edited") // true
+frontAgain("edit") // false
+frontAgain("ed") // true
+*/
 
-// for how many words
-var array = str.split(" ");
-console.log(array.length);
-
-//Last word
-console.log(array[array.length-1]);
-
-// for how many sentences 
-var sentence = str.split(".");
-console.log(array.length);
-
-// Includes or not
-if (array.includes("Netscape")){
-    console.log("found");
-}
-
-// How many times
-var counter =0;
-for(var i=0; i<array.length;i++){
-    if(array[i] == "Netscape"){
-        counter++;
-    }
-}
-console.log(counter);
-
-
-// substr () method (start:required, length:optional)
-var str = "JavaScript";
-console.log(str.substr(0,1)); // J
-console.log(str.substr(1)); // avaScript
-console.log(str.substr(-3)); // ipt
-console.log(str.substr(-20, 2)); //Ja
-console.log(str.substr(20, 2)); //" "
-console.log(str.substr(-7, 2)); // aS
-console.log(str.substr(-1, 1)); // t
-console.log(str.substr(1, -1)); // " "
-
-
-
-var str = "JavaScript";
-console.log(str.substr(0,1));   // J    -> 0th index, 1 character.
-
-console.log(str.substr(1,0));   // " "  -> 1st index, 0 character. NOTHING
-
-console.log(str.substr(-1,1));  // t    -> -1st index, 1 character. start from end
-
-console.log(str.substr(1,-1));  // " "  -> 1st index, -1 character. NOTHING
-
-console.log(str.substr(-3));    // ipt  -> -3rd index. start from end. reads left to right.
-
-console.log(str.substr(1));     // avaScript -> 1st index. reads left to right.
-
-console.log(str.substr(-20,2)); // Ja   -> don't have -20th index. It starts beginning and reads 2 character.
-
-console.log(str.substr(20,2));  // " "  -> don't have 20th index. NOTHING
-
-
-// substring() method (indexStart:required indexEnd: optional)
-
-var str = "Hello world!";
-
-console.log(str.substring(0,1));     //H            -> starts 0th index. reads until 1st index. But, 1th is not included. 
-console.log(str.substring(1,0));     //H            -> 1 > 0 = swap it. starts 0th index. reads until 1st index. But, 1th is not included.
-console.log(str.substring(0,6));     //Hello        -> starts 0th index. reads until 6th index. But, 6th is not included.
-console.log(str.substring(4));       //o world!     -> starts 4th index. reads until end.
-console.log(str.substring(4,7));     //o w          -> starts 4th index. reads until 7th index. But, 7th is not included.
-console.log(str.substring(7,4));     //o w          -> 7 > 4 = swap it. starts 4th index. reads until 7th index. But, 7th is not included.
-console.log(str.substring(0,7));     //Hello w      -> starts 0th index. reads until 7th index. But, 7th is not included.
-console.log(str.substring(0,10));    //Hello worl   -> starts 0th index. reads until 10th index. But, 10th is not included.
-
-var str = "Hello world!";
-
-console.log(str.substring(0, 1)); // H
-console.log(str.substring(1, 0)); // H
-console.log(str.substring(0, 6)); // Hello
-console.log(str.substring(4)); // o world!
-console.log(str.substring(4, 7)); // o w
-
-var str = "JavaScript";
-console.log(str.substring(str.length-4, 2)); // index 6, 2 swap to 2,6 result vaSc
-console.log(str.substring(2,3)); // v
-console.log(str.substring(str.length, 2)); // 2,10 result vaScript
-
-// toLowerCase() method
-
-var str = "JavaScript";
-console.log(str.toLowerCase()); // javascript
-console.log(str);
-str = str.toLowerCase();
-console.log(str);
-
-// // toUpperCase() method
-var str = "JavaScript";
-console.log(str.toUpperCase()); //JAVASCRIPT
-
-var str = "Javascript";
-
-var newStr = "";
-for (var i = 0; i < str.length; i++) {
-    if (i == 2 || i == 5) {
-        var upper = str.charAt(i).toUpperCase();
+function frontAgain(str) {
+    if (str.length > 2) {
+        var first2Char = str.substr(0, 2);
+        var last2Char = str.substr(-2);
+        if (first2Char == last2Char) {
+            console.log("true");
+        } else {
+            console.log("false");
+        }
     } else {
-        upper = str.charAt(i);
+        console.log(true);
     }
-    newStr += upper;
 }
 
-console.log(str);
-console.log(newStr);
+frontAgain("edited") // true
+frontAgain("edit") // false
+frontAgain("ed") // true
+
+/* Question 2
+
+Return the number of times that the string "hi" appears anywhere in the given string.
+
+countHi("abc hi ho") → 1
+countHi("ABChi hi") → 2
+countHi("hihi") → 2
+*/
+
+function countHi(str) {
+    var count = 0;
+    var arrayStr = str.split("");
+    for (var i = 0; i < arrayStr.length; i++) {
+        if (arrayStr[i] == "h" && arrayStr[i + 1] == "i") {
+            count++;
+        }
+    }
+    console.log(count);
+
+}
+
+// Sample 
+countHi("abc hi ho") // 1
+countHi("ABChi hi") // 2
+countHi("hihi") // 2
+
+// Second option
+function countHi(str) {
+    var count = 0;
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) == "h" && str.charAt(i + 1) == "i") {
+            count++;
+        }
+    }
+    console.log(count);
+
+}
+
+// Sample 
+countHi("abc hi ho") // 1
+countHi("ABChi hi") // 2
+countHi("hihi") // 2
+
+/* Question 3
+
+Return true if the string "cat" and "dog" appear the same number of times in the given string.
+
+catDog("catdog") → true
+catDog("catcat") → false
+catDog("1cat1cadodog") → true
+*/
+
+function catDog(str) {
+    var countCat = 0;
+    var countDog = 0;
+    for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i) == "c" && str.charAt(i + 1) == "a" && str.charAt(i + 2) == "t") {
+            countCat++
+        }
+        if (str.charAt(i) == "d" && str.charAt(i + 1) == "o" && str.charAt(i + 2) == "g") {
+            countDog++
+        }
+    }
+    if (countCat == countDog) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+}
+
+catDog("catdog") // true
+catDog("catcat") // false
+catDog("1cat1cadodog") // true
+
+// Second option
+
+function catDog(str) {
+    var countCat = 0;
+    var countDog = 0;
+    for (var i = 0; i < str.length; i++) {
+        if (str.substring(i, i + 3) == "cat") {
+            countCat++
+        }
+        if (str.substring(i, i + 3) == "dog") {
+            countDog++
+        }
+    }
+    if (countCat == countDog) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+}
+
+catDog("catdog") // true
+catDog("catcat") // false
+catDog("1cat1cadodog") // true
 
 
+/* Question 4
+Given a string, return a string where for every char in the original, there are two chars.
 
-// trim() method - removes whitespaces from both ends of a string
+doubleChar("The") → "TThhee"
+doubleChar("AAbb") → "AAAAbbbb"
+doubleChar("Hi-There") → "HHii--TThheerree"
+*/
 
-var str = "   JavaScript";
-console.log(str.trim());
-var str = "JavaScript      ";
-console.log(str.trim());
-var str = "   JavaScript     ";
-console.log(str.trim());
-var str = "   Ja   va  Scri  pt   ";
-console.log(str.trim());
+function doubleChar(str) {
+    var newStr = "";
+    for (var i = 0; i < str.length; i++) {
+        newStr += str.charAt(i) + str.charAt(i);
+    }
+    console.log(newStr);
+}
 
+doubleChar("The") // "TThhee"
+doubleChar("AAbb") // "AAAAbbbb"
+doubleChar("Hi-There") // "HHii--TThheerree"
 
-var str = "     342      "
-console.log("|" + str.trim() + "|")
+/* Question 5
+Given a string, return true if it ends in "ly".
+
+endsLy("oddly") → true
+endsLy("y") → false
+endsLy("oddy") → false
+*/
+
+function endsLy(str) {
+    if (str.substr(-2) == "ly") {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+}
+
+endsLy("oddly") // true
+endsLy("y") // false
+endsLy("oddy") // false
+
+/* Question 6
+Given a string, return a version without both the first and last char of the string. The string may be any length, including 0.
+
+withouEnd2("Hello") → "ell"
+withouEnd2("abc") → "b"
+withouEnd2("ab") → ""
+*/
+
+function withoutEnd2(str) {
+    var newStr = str.slice(1, -1);
+    console.log(newStr);
+};
+
+withoutEnd2("Hello") // "ell"
+withoutEnd2("abc") // "b"
+withoutEnd2("ab") // ""
+
+/* Question 7
+Given a string, return true if "bad" appears starting at index 0 or 1 in the string, 
+such as with "badxxx" or "xbadxx" but not "xxbadxx". The string may be any length, including 0. 
+Note: use .equals() to compare 2 strings.
+
+hasBad("badxx") → true
+hasBad("xbadxx") → true
+hasBad("xxbadxx") → false
+*/
+function hasBad(str) {
+    if (str.substr(0, 4).includes("bad")) {
+        console.log(true);
+    } else {
+        console.log("false");
+    }
+}
+
+hasBad("badxx") // true
+hasBad("xbadxx") // true
+hasBad("xxbadxx") // false
+
+/* Question 8
+Given a string, return a string length 2 made of its first 2 chars. 
+If the string length is less than 2, use '@' for the missing chars.
+
+atFirst("hello") → "he"
+atFirst("hi") → "hi"
+atFirst("h") → "h@"
+*/
+
+function atFirst(str) {
+    if (str.length >= 2) {
+        console.log(str.substr(0, 2));
+    } else {
+        console.log(str.concat("@"));
+    }
+}
+
+atFirst("hello") // "he"
+atFirst("hi") // "hi"
+atFirst("h") // "h@"
