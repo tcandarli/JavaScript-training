@@ -89,25 +89,25 @@ countTriple("a") // 0
 // gHappy("xxggyygxx") → false
 // */
 
-// // function gHappy(str) {
-// //     for (var i = 0; i < str.length; i++) {
-// //         if (str.substr(i, 1) == "g") {
-// //             var isFound = false;
-// //             if (str.substr(i + 1, 1) == "g" || str.substr(i - 1, 1) == "g") {
-// //                 isFound = true;
-// //             }
-// //         }
-// //     }
-// //     if (isFound) {
-// //         console.log("true");
-// //     } else {
-// //         console.log("false");
-// //     }
-// // }
+function gHappy(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (str.substr(i, 1) == "g") {
+            var isFound = false;
+            if (str.substr(i + 1, 1) == "g" || str.substr(i - 1, 1) == "g") {
+                isFound = true;
+            }
+        }
+    }
+    if (isFound) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+}
 
-// // gHappy("xxggxx") // true
-// // gHappy("xxgxx") // false
-// // gHappy("xxggyygxx") // false
+gHappy("xxggxx") // true
+gHappy("xxgxx") // false
+gHappy("xxggyygxx") // false
 
 // /* Question4
 // Given a string, return true if the number of appearances of "is" anywhere in the 
@@ -136,9 +136,9 @@ function equalIsNot(str) {
     }
 }
 
-// equalIsNot("This is not") // false
-// equalIsNot("This is notnot") // true
-// equalIsNot("noisxxnotyynotxisi") // true
+equalIsNot("This is not") // false
+equalIsNot("This is notnot") // true
+equalIsNot("noisxxnotyynotxisi") // true
 
 // /* Question5
 // A sandwich is two pieces of bread with something in between. Return the string 
