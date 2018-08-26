@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>JQuery Event Handling</title>
+</head>
+
+<body>
+    <div>
+        
+        <button onclick="alert('Merhaba')" style="color:red">click</button>
+        <button ondblclick="alert('Hoscakal')" style="color:royalblue">DoubleClick</button>
+        <button onmouseover="alert('Mouse is over the button')" style="color:green">MouseOver</button>
+        <input title="Events" onkeyup="console.log('entered chars: ', this.value)" value="Value"/><br>
+        <a id="link1">Click</a><br>
+        <a id="link2">Click2</a><br>
+        <a id="link3">Click2</a><br>
+        
+
+        <table>
+            <tr>
+                <th>FirstName</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Event</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Smith</td>
+                <td>28</td>
+                <td class="button">Delete</td>
+
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Happy</td>
+                <td>49</td>
+                <td class="button">Delete</td>
+            </tr>
+            <tr>
+                <td>Bill</td>
+                <td>Gates</td>
+                <td>56</td>
+                <td class="button">Delete</td>
+            </tr>
+            <tr>
+                <td>Simon</td>
+                <td>Writer</td>
+                <td>36</td>
+                <td class="button">Delete</td>
+            </tr>
+            <tr>
+                <td>Andrew</td>
+                <td>Gates</td>
+                <td>27</td>
+                <td class="button">Delete</td>
+            </tr>
+
+        </table>
+
+    </div>
+    <script src="jQueryEventHanling.js"></script>
+</body>
+
+</html>
