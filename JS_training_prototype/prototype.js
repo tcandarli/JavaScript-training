@@ -75,3 +75,17 @@ myObj.__proto__.hello = "test";
 console.log(myObj.hello);
 
 myObj.test = 10;
+
+function employee(name) {
+    this.name = name;
+}
+
+let employee1 = new employee("Mike");
+let employee2 = new employee("John");
+
+employee.prototype.playPranks = function(){
+    console.log("Plank played")
+}
+
+employee1.playPranks();
+employee2.playPranks();
