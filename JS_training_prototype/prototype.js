@@ -97,3 +97,13 @@ The minute you add that extra property, every object that was created
 from the employee as a constructor, even thhe ones that were created before you 
 added that on the property would still work. Because the property look up happens at runtime.
 */
+
+let simple = {};
+var obj = new Object();
+
+console.log(simple.__proto__ === obj.__proto__);
+
+
+console.log(obj.__proto__ === Object.prototype);
+console.log(simple.__proto__ === Object.prototype);
+console.log(simple.__proto__ === simple.prototype);
