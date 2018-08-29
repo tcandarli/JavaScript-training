@@ -89,3 +89,11 @@ employee.prototype.playPranks = function(){
 
 employee1.playPranks();
 employee2.playPranks();
+
+/* 
+In class modules, you have to define all method upfront 
+In prototype, you can put things at runtime.
+The minute you add that extra property, every object that was created
+from the employee as a constructor, even thhe ones that were created before you 
+added that on the property would still work. Because the property look up happens at runtime.
+*/
