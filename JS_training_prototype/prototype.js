@@ -1,0 +1,77 @@
+/* In Java we created classes and put meethods inside and inherited these methods by using extends.
+
+JS does not have classes but have PROTOTYPES.
+
+It is not exacty same as class, because you do not create instance of it, but you can create methods that affect multiple
+objects by using prototype 
+
+*/
+
+function bicycle(cadence, speed, gear, tirePressure) {
+    this.cadence = cadence;
+    this.speed = speed;
+    this.gear = gear;
+    this.tirePressure = tirePressure;
+
+    this.inflateTires = function () {
+        return this.tirePressure += 3;
+    }
+}
+
+let bike1 = new bicycle(50, 20, 4, 25);
+bike1.inflateTires();
+console.log(bike1.tirePressure);
+
+
+function mechanic(name) {
+    this.name = name;
+}
+
+// let mechanic1 = new mechanic("Mike"); // I wanna to give acces to Mike to inflateTires method.
+
+/*
+
+Whenever you create a function, JS creates 2 objects.
+1. function name object
+2. proototype object
+
+*/
+
+function foo(){
+
+};
+
+function bar(){
+
+};
+
+function greet(){
+    console.log("Hello");
+}
+
+console.log(greet()); //hello
+console.log(greet); //function object
+console.log(greet.prototype);
+
+/* when you create object, __proto__ is created
+ */
+
+function foo() {
+
+};
+
+let myObj = new foo();
+console.log(myObj);
+
+/*
+Set a property to foo prototype and access it from obj
+*/
+
+foo.prototype.test = "this is object";
+console.log(myObj.__proto__.test);
+console.log(myObj.test);
+
+myObj.__proto__.hello = "test";
+console.log(myObj.hello);
+
+myObj.test = 10;
