@@ -106,4 +106,43 @@ console.log(simple.__proto__ === obj.__proto__);
 
 console.log(obj.__proto__ === Object.prototype);
 console.log(simple.__proto__ === Object.prototype);
-console.log(simple.__proto__ === simple.prototype);
+
+function employee(){}
+    let emp = new employee();
+emp.test; // it doesn't exist_picture 5
+
+emp.prop = "Employee";
+console.log(emp.__proto__.parentProp = "Parent of employer");
+console.log(emp.__proto__.__proto__ === Object.prototype);
+console.log(employee.prototype.__proto__ === Object.prototype);
+
+Object.prototype.grandParentProp = "Grand Parent";
+
+function foo() {}
+let tmp = new foo();
+console.log(tmp.grandParentProp);  // It comes from Object.prototype;
+
+console.log(emp.__proto__.__proto__.__proto__);
+console.log(employee.prototype.__proto__.__proto__);
+
+//INHERITANCE
+
+function employee(name) {
+    this.name = name;
+}
+
+employee.prototype.getName = function(){
+    return this.name;
+}
+
+let emp1 = new employee("Mike");
+console.log(emp1.getName());
+
+// You have employee object and some behaviour, also you have mmanager object.
+// Managers are also employee an have common properties but managers have their own special behaviour as well.
+
+
+
+
+
+
