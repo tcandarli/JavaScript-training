@@ -79,3 +79,22 @@ console.log("JavaScript first appeared " + (a + b) + " years ago.")
 console.log(`JavaScript first appeared ${a + b} year ago.`);
 console.log(`JavaScript first appeared ${2 * 10} year ago.`);
 
+// Task1
+let firstName = "Mike";
+let lastName = "Smith";
+const yearOfBirth = 1970;
+
+function calcAge(year) {
+    return 2018 - year;
+}
+console.log(`This is ${firstName} ${lastName} He was born in ${yearOfBirth} , he is ${calcAge(yearOfBirth)} years old.`)
+
+// String methods
+let fName = "Mike";
+let lName = "Smith";
+
+const n = `${fName} ${lName}`;
+
+console.log(n.startsWith("m")); // false
+console.log(n.endsWith("Sm")); // false
+console.log(n.endsWith("th")); // true
