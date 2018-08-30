@@ -89,7 +89,7 @@ function calcAge(year) {
 }
 console.log(`This is ${firstName} ${lastName} He was born in ${yearOfBirth} , he is ${calcAge(yearOfBirth)} years old.`)
 
-// String methods
+// New String methods in ES6
 let fName = "Mike";
 let lName = "Smith";
 
@@ -98,3 +98,41 @@ const n = `${fName} ${lName}`;
 console.log(n.startsWith("m")); // false
 console.log(n.endsWith("Sm")); // false
 console.log(n.endsWith("th")); // true
+console.log(n.includes(" ")); // rtrue
+console.log(n.includes("ik")); // true
+console.log(fName.repeat(3)); // MikeMikeMike
+console.log(`${fName} `.repeat(3)); // Mike Mike Mike
+
+// Functions ES5
+var b = function (a) {
+    return a;
+}
+
+// Arrow functions in ES6
+let x = a => a;
+console.log(x(2));
+
+// If we don't have any parameters
+
+// ES5
+var y = function () {
+    console.log("Hello");
+}
+
+// ES6
+let z = () => {
+    console.log("Hello");
+};
+z();
+
+// If we have multiple parameters
+
+// ES5
+var m = function (a, b, c) {
+    return a + b + c;
+};
+console.log(m(1, 2, 4));
+
+// ES6
+let k = (a, b, c) => a + b + c;
+console.log(k(1, 2, 4));
