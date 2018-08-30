@@ -80,14 +80,14 @@ console.log(`JavaScript first appeared ${a + b} year ago.`);
 console.log(`JavaScript first appeared ${2 * 10} year ago.`);
 
 // Task1
-let firstName = "Mike";
-let lastName = "Smith";
-const yearOfBirth = 1970;
+// let firstName = "Mike";
+// let lastName = "Smith";
+// const yearOfBirth = 1970;
 
-function calcAge(year) {
-    return 2018 - year;
-}
-console.log(`This is ${firstName} ${lastName} He was born in ${yearOfBirth} , he is ${calcAge(yearOfBirth)} years old.`)
+// function calcAge(year) {
+//     return 2018 - year;
+// }
+// console.log(`This is ${firstName} ${lastName} He was born in ${yearOfBirth} , he is ${calcAge(yearOfBirth)} years old.`)
 
 // New String methods in ES6
 let fName = "Mike";
@@ -145,3 +145,58 @@ const map2 = array1.map(x => x + 2);
 console.log(map1); // [2, 8, 18, 32]
 console.log(map2); // [3, 6, 11, 18]
 
+const years = [1990, 1965, 1982, 1957];
+let ages6 = years.map(el => 2018 - el);
+console.log(ages6);
+
+// Task 
+
+let materials = [
+    "Hydrogen",
+    "Helium",
+    "Lithium",
+    "Beryllium"
+]
+let lengthElements = materials.map(str => str.length);
+console.log(lengthElements); // [8, 6, 7, 9]
+
+//Arrow function CAN NOT be used as a constructor and will throw an error when used with new
+
+// let Foo = () => {};
+// let foo = new foo(); // Error: foo i not efined
+
+// Arrow functions do not have prototype property
+// ************************************************************
+
+// Destructuring
+
+/* Destructuring  is a JS expression that makes it possible to unpack values from array, or properties,
+into distinct variables
+*/
+
+// ES5
+// var john = ["john", 26];
+// var name = john[0];
+// var age = john[1];
+
+// ES6
+let [name, age] = ["John", 26];
+console.log(name);
+console.log(age);
+
+const obj = {
+    firstName: "Mike",
+    lastName: "Smith",
+}
+
+const {firstName, lastName} = obj;
+console.log(firstName, lastName);
+
+function calcAgeRetirement(year) {
+    const age = new Date().getFullYear() - year;
+    return[age, 65 - age];
+}
+const[age2, retirement] = calcAgeRetirement(1990);
+
+console.log(age2);
+console.log(retirement);
