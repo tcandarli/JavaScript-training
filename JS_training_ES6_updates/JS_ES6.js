@@ -136,3 +136,12 @@ console.log(m(1, 2, 4));
 // ES6
 let k = (a, b, c) => a + b + c;
 console.log(k(1, 2, 4));
+
+// map() method : Creates a new array with the result of calling a provided function on every element in the calling array
+let array1 = [1, 4, 9, 16];
+const map1 = array1.map(x => x * 2);
+const map2 = array1.map(x => x + 2);
+
+console.log(map1); // [2, 8, 18, 32]
+console.log(map2); // [3, 6, 11, 18]
+
