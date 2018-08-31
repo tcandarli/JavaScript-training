@@ -1,7 +1,7 @@
 // Arrays
 
-var x = Array.from("JavaScript");
-console.log(x);
+// var x = Array.from("JavaScript");
+// console.log(x);
 
 // ES5
 
@@ -50,10 +50,41 @@ console.log(x);
 //     console.log(list[i]);
 // }
 
-let list = [4, 5, 6];
-for (let i of list) {
-    console.log(i);
+// let list = [4, 5, 6];
+// for (let i of list) {
+//     console.log(i);
+// }
+
+// // Spread Operator (...)
+
+// let mid = [3, 4];
+// let arr = [1, 2, mid, 5, 6];
+
+// console.log(arr);
+
+// let arr2 = [1, 2, ...mid, 5, 6]; // ... spreads the array
+// console.log(arr2);
+
+// function addFourAges(a, b, c, d) {
+//     return a + b + c + d;
+
+// }
+
+// let sum1 = addFourAges(10, 20, 30, 40);
+// console.log(sum1);
+
+// If we have those ages in an array, how can we pass them to function
+
+
+function addFourAges(a, b, c, d) {
+    return a + b + c + d;
+
 }
 
-// Spread Operator
+let ages = [10, 20, 30, 40];
 
+// let sum = addFourAges(...ages);
+// console.log(sum);
+
+let sum = (a, b, c, d) => a + b + c + d;
+console.log(sum(...ages));
