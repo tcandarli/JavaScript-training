@@ -76,15 +76,65 @@
 // If we have those ages in an array, how can we pass them to function
 
 
-function addFourAges(a, b, c, d) {
-    return a + b + c + d;
+// function addFourAges(a, b, c, d) {
+//     return a + b + c + d;
 
-}
+// }
 
-let ages = [10, 20, 30, 40];
+// let ages = [10, 20, 30, 40];
 
-// let sum = addFourAges(...ages);
-// console.log(sum);
+// // let sum = addFourAges(...ages);
+// // console.log(sum);
 
-let sum = (a, b, c, d) => a + b + c + d;
-console.log(sum(...ages));
+// let sum = (a, b, c, d) => a + b + c + d;
+// console.log(sum(...ages));
+
+
+// Rest operator
+
+// function sumAll(...args) {
+//     let sum = 0;
+//     for (let arg of args) {
+//         sum += arg;
+//     }
+//     return sum;
+// }
+
+// console.log(sumAll(1));
+// console.log(sumAll(1, 2));
+// console.log(sumAll(1, 2, 3));
+
+/* 
+The big difference between spread and rest operator is the which we use each of them.
+
+Spread operator is used in the function call.
+While the Rest Operator is use in the function declaration to exact and arbitrary number
+of parammeters
+*/
+
+// Task
+
+// function multiply(multiplier, ...theArgs) {
+//     return theArgs.map(function(element) {
+//         return multiplier * element;
+//     }) 
+// }
+
+// let arr = multiply(2, 1, 2, 3);
+// console.log(arr);
+
+let multiply = (multiplier, ...theArgs) => theArgs.map(element => multiplier * element);
+let arr = multiply(2, 1, 2, 3);
+console.log(arr);
+
+// MAP 
+
+// The map object hold key-value pairs. Any value (both objects an primitive values may be used as either a key or a value)
+
+let myMap = new Map();
+
+myMap.set("keyString", "value associated with a string");
+myMap.set("keyObj", "value associated with keyObj");
+myMap.set("keyFunc", "value associated with keyFunc");
+
+
