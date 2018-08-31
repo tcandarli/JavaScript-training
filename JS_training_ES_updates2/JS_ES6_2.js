@@ -105,7 +105,7 @@
 // console.log(sumAll(1, 2, 3));
 
 /* 
-The big difference between spread and rest operator is the which we use each of them.
+The big difference between spread and rest operator is the which we use each of them, argurmennt or parameter
 
 Spread operator is used in the function call.
 While the Rest Operator is use in the function declaration to exact and arbitrary number
@@ -123,18 +123,40 @@ of parammeters
 // let arr = multiply(2, 1, 2, 3);
 // console.log(arr);
 
-let multiply = (multiplier, ...theArgs) => theArgs.map(element => multiplier * element);
-let arr = multiply(2, 1, 2, 3);
-console.log(arr);
+// let multiply = (multiplier, ...theArgs) => theArgs.map(element => multiplier * element);
+// let arr = multiply(2, 1, 2, 3);
+// console.log(arr);
 
 // MAP 
 
 // The map object hold key-value pairs. Any value (both objects an primitive values may be used as either a key or a value)
 
-let myMap = new Map();
+// let myMap = new Map();
 
-myMap.set("keyString", "value associated with a string");
-myMap.set("keyObj", "value associated with keyObj");
-myMap.set("keyFunc", "value associated with keyFunc");
+// myMap.set("keyString", "value associated with a string");
+// myMap.set("keyObj", "value associated with keyObj");
+// myMap.set("keyFunc", "value associated with keyFunc");
 
+// console.log(myMap.size);
+
+// console.log(myMap.get("keyString"));
+// console.log(myMap.get("keyObj"));
+// console.log(myMap.get("keyFunc"));
+
+let question = new Map();
+question.set("question", "what is the offical name of the latest major J version");
+question.set(1, "ES5");
+question.set(2, "ES6");
+question.set(3, "ES2015");
+question.set("correct", 3);
+question.set("correct", 3);
+question.set(true, "Correct answer is D");
+question.set(false, "Wrong answer");
+
+console.log(question.get("question"));
+console.log(question.size);
+
+for (let [key, value] of question.entries()) {
+    console.log(`This is ${key}, and it is set to ${value}`);
+}
 
