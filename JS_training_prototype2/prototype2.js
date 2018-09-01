@@ -36,9 +36,31 @@ let wage=20;
 Console: Employee ID:ms38's overtime hours for this month is:20 and earning is $4800
 */
 
+// 1
 let arrHours = [];
-for (let i = 1; i <= 4 ; i++) {
+for (let i = 1; i <= 4; i++) {
     let hours = +prompt(`Please enter the hours that you worked for week ${(i)} :`);
     arrHours.push(hours);
 }
 console.log(arrHours);
+// 2
+let wage = prompt("Please enter your wage: ");
+// 3
+function Employee(fName, lName, birthYear) {
+    this.fName = fName;
+    this.lName = lName;
+    this.birthYear = birthYear;
+    this.generateID = function () {
+        let date = new Date();
+        let thisYear = date.getFullYear();
+        let age = this.birthYear - thisYear;
+        let ID = this.fName.substr(0, 1).concat(this.lName.substr(0, 1)).concat(age);
+        return ID;
+    }
+}
+
+// 4
+function Payroll(hours, insurance) {
+    this.hours = hours;
+    this.insurance = insurance;
+}
