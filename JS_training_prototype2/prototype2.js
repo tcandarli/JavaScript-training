@@ -35,3 +35,10 @@ let wage=20;
 
 Console: Employee ID:ms38's overtime hours for this month is:20 and earning is $4800
 */
+
+let arrHours = [];
+for (let i = 1; i <= 4 ; i++) {
+    let hours = +prompt(`Please enter the hours that you worked for week ${(i)} :`);
+    arrHours.push(hours);
+}
+console.log(arrHours);
