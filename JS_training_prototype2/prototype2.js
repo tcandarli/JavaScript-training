@@ -33,34 +33,64 @@ var emp1=new Employee("mike","smith",1980);
 let p1=new Payroll(arr,true);
 let wage=20;
 
-Console: Employee ID:ms38's overtime hours for this month is:20 and earning is $4800
+Console: Employee ID:ms38's overtime hours for this month is:20 and earning is $4400
 */
 
-// 1
+// 1. Ask for 4 weeks working hours
 let arrHours = [];
 for (let i = 1; i <= 4; i++) {
-    let hours = +prompt(`Please enter the hours that you worked for week ${(i)} :`);
+    let hours = +prompt(`Please enter the total working hours for week ${(i)} :`);
     arrHours.push(hours);
 }
-console.log(arrHours);
-// 2
-let wage = prompt("Please enter your wage: ");
-// 3
+// 2. Ask for wage variable
+let wage = prompt("Please enter the wage: ");
+// 3. Employee constructor function
 function Employee(fName, lName, birthYear) {
     this.fName = fName;
     this.lName = lName;
+    this.fullName = function () {
+        return this.fName + " " + this.lName;
+    }
     this.birthYear = birthYear;
+    // 4. emloyeeID method
     this.generateID = function () {
-        let date = new Date();
-        let thisYear = date.getFullYear();
-        let age = this.birthYear - thisYear;
+        let age = new Date().getFullYear() - this.birthYear;
         let ID = this.fName.substr(0, 1).concat(this.lName.substr(0, 1)).concat(age);
         return ID;
     }
 }
-
-// 4
-function Payroll(hours, insurance) {
-    this.hours = hours;
+// 5. Payroll constructor function
+function Payroll(arrHours, insurance) {
+    this.hours = arrHours;
     this.insurance = insurance;
+    // 6. Total hours calculation method
+    this.totalHours = function () {
+        let totalHours = this.hours.reduce((acc, cur) => acc + cur); // I used reduce() method with arrw function to sum up array elements
+        return totalHours;
+    };
+    // 7. Earning calculation method
+    this.calcEarning = function () {
+        let calcEarning = 0;
+        // 9. If there is overTime, increase the wage 50%
+        if (this.overTime()) {
+            calcEarning = (wage * 160) + (wage * 1.5 * this.overTime());
+        } else {
+            calcEarning = this.totalHours * wage;
+        };
+        if (this.insurance) {
+            calcEarning += 600;
+        };
+        return calcEarning;
+    };
+    // 8. Overtime hours calculation method
+    this.overTime = function () {
+        let overTime = 0;
+        overTime = this.totalHours() - 160;
+        return overTime;
+    };
+
 }
+// 10. 11. 12. Run the program
+let emp1 = new Employee("Mike", "Smith", 1980);
+let pay1 = new Payroll(arrHours, "Axa");
+console.log(`${emp1.generateID()}'s overtime hours for this month is: ${pay1.overTime()} and the earning is: $${pay1.calcEarning()};`)
