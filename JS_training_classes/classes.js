@@ -180,13 +180,51 @@ class GetThings {
     constructor(size) {
         this.length = size;
     }
+
     get Length() {
         return this.length;
     }
 
     set Length(value) {
         this.length = value;
-        $
         console.log("The value has been set");
+    }
+}
+
+let thing = new GetThings(9);
+console.log(thing.Length);
+
+thing.Length = 10;
+console.log(thing.Length);
+
+
+//**************************************************** */
+
+class EncapTest {
+    constructor(name, idNum, age) {
+        this.name = name;
+        this.idNum = idNum;
+        this.age = age;
+    }
+    get Age() {
+        return this.age;
+    }
+
+    get Name() {
+        return this.name;
+    }
+    get IdNum() {
+        return this.idNum;
+    }
+
+    set Age(newAge) {
+        this.age = newAge;
+    }
+
+    set Name(newName) {
+        this.name = newName;
+    }
+    set IdNum(newIdNum) {
+        this.idNum = newIdNum;
     }
 }
