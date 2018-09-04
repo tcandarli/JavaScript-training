@@ -228,3 +228,9 @@ class EncapTest {
         this.idNum = newIdNum;
     }
 }
+
+let encap = new EncapTest();
+encap.Name = "Mike";
+encap.Age = 30;
+encap.IdNum = "MS30";
+console.log(`Name ${encap.Name} Age: ${encap.Age} ID: ${encap.idNum}`)
