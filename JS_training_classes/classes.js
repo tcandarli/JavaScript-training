@@ -1,12 +1,12 @@
 // ES5
 
-var Person5 = function(name, yearOfBirth, job) {
+var Person5 = function (name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
     this.job = job
 };
 
-Person5.prototype.calculateAge = function(){
+Person5.prototype.calculateAge = function () {
     var age = new Date().getFullYear() - this.yearOfBirth;
     console.log(`Age is ${age}`);
 };
@@ -17,14 +17,14 @@ mike5.calculateAge();
 // ES6
 
 class Person6 {
-    constructor(name, yearOfBirth, job){
+    constructor(name, yearOfBirth, job) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
         this.job = job;
     }
-    calculateAge(){
-    let age = new Date().getFullYear() - this.yearOfBirth;
-    console.log(`Age is ${age}`);
+    calculateAge() {
+        let age = new Date().getFullYear() - this.yearOfBirth;
+        console.log(`Age is ${age}`);
     }
 }
 
@@ -148,10 +148,45 @@ mike.displayName();
 mike.displayAge();
 mike.displayWeight();
 
-console.log("..........................................")
+console.log("..........................................");
 
 let john = new Programmer("John", 35, 75, "JavaScript");
 john.displayName();
 john.displayAge();
 john.displayWeight();
 john.displayLanguage();
+console.log("..........................................")
+
+class Vehicle {
+    start() {
+        console.log("Starting the vehicle");
+    }
+}
+
+class Car extends Vehicle {
+    start() {
+        // super.start();
+        console.log("Starting the car");
+        super.start();
+    }
+};
+
+let honda = new Car();
+honda.start();
+
+// Getter and Setter
+
+class GetThings {
+    constructor(size) {
+        this.length = size;
+    }
+    get Length() {
+        return this.length;
+    }
+
+    set Length(value) {
+        this.length = value;
+        $
+        console.log("The value has been set");
+    }
+}
