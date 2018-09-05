@@ -52,45 +52,55 @@ function Employee(fName, lName, birthYear) {
         return this.fName + " " + this.lName;
     }
     this.birthYear = birthYear;
-    // 4. emloyeeID method
-    this.generateID = function () {
-        let age = new Date().getFullYear() - this.birthYear;
-        let ID = this.fName.substr(0, 1).concat(this.lName.substr(0, 1)).concat(age);
-        return ID;
-    }
+    
+   
 }
+
+// 4. emloyeeID method
+Employee.prototype.generateID = function () {
+    let age = new Date().getFullYear() - this.birthYear;
+    let ID = this.fName.substr(0, 1).concat(this.lName.substr(0, 1)).concat(age);
+    return ID;
+}
+
 // 5. Payroll constructor function
 function Payroll(arrHours, insurance) {
     this.hours = arrHours;
     this.insurance = insurance;
-    // 6. Total hours calculation method
-    this.totalHours = function () {
-        let totalHours = this.hours.reduce((acc, cur) => acc + cur); // I used reduce() method with arrw function to sum up array elements
-        return totalHours;
-    };
-    // 7. Earning calculation method
-    this.calcEarning = function () {
-        let calcEarning = 0;
-        // 9. If there is overTime, increase the wage 50%
-        if (this.overTime()) {
-            calcEarning = (wage * 160) + (wage * 1.5 * this.overTime());
-        } else {
-            calcEarning = this.totalHours * wage;
-        };
-        if (this.insurance) {
-            calcEarning += 600;
-        };
-        return calcEarning;
-    };
-    // 8. Overtime hours calculation method
-    this.overTime = function () {
-        let overTime = 0;
-        overTime = this.totalHours() - 160;
-        return overTime;
-    };
 
 }
+
+// 6. Total hours calculation method
+Payroll.prototype.totalHours = function () {
+    let totalHours = this.hours.reduce((acc, cur) => acc + cur); // I used reduce() method with arrw function to sum up array elements
+    return totalHours;
+};
+
+// 7. Earning calculation method
+Payroll.prototype.calcEarning = function () {
+    let calcEarning = 0;
+    // 9. If there is overTime, increase the wage 50%
+    if (this.overTime()) {
+        calcEarning = (wage * 160) + (wage * 1.5 * this.overTime());
+    } else {
+        calcEarning = this.totalHours * wage;
+    };
+    if (this.insurance) {
+        calcEarning += 600;
+    };
+    return calcEarning;
+};
+
+// 8. Overtime hours calculation method
+Payroll.prototype.overTime = function () {
+    let overTime = 0;
+    overTime = this.totalHours() - 160;s
+    return overTime;
+};
+
 // 10. 11. 12. Run the program
 let emp1 = new Employee("Mike", "Smith", 1980);
 let pay1 = new Payroll(arrHours, "Axa");
+
+emp1.__proto__._proto__ == Payroll.prototype;
 console.log(`${emp1.generateID()}'s overtime hours for this month is: ${pay1.overTime()} and the earning is: $${pay1.calcEarning()};`)
