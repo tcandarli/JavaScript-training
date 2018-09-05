@@ -31,47 +31,49 @@ Robby is blasting you with laser beams.
 Rosie is blasting you with laser beams.
 */
 
+// 1. Game constructor function
 function Game() {
     this.level = 0;
-    this.play = function () {
-        this.level += 1;
-        console.log(`Welcome to Level ${this.level}`);
-    };
-    this.unlock = function () {
-        if (this.level === 10) {
-            this.deployLaser = function () {
-                console.log(`${this.name} is blasting you with laser beams`);
-            }
-        }
-
-    }
-
 }
 
+// 2. Robot constructor function
 function Robot(name, year, owner) {
     this.name = name;
     this.year = year;
     this.owner = owner;
 }
 
-let game1 = new Game();
-let game2 = new Game();
-console.log(game1);
-console.log(game2);
+// 3. Play() method 
+Game.prototype.play = function (level) {
+    console.log(`Welcome to level ${level}`);
+    this.unlock(level);
+    level++;
+    return level;
+};
 
-game1.play();
-game1.play();
-game1.play();
-game1.play();
-game1.play();
-game1.play();
-game1.play();
-game1.play();
-game1.play();
-game1.play();
-game1.play();
+// 4. Unlock() method
+Game.prototype.unlock = function (level) {
+    if (level == 10) {
+        Game.prototype.deployLaser = function () {
+            console.log(`${this.name} is blasting you with laser beams!`);
+        }
+    }
+}
 
-Robot.prototype = Game.prototype;
+// 5. Create 2 Robot objects and call deployLaser() 
 let robot1 = new Robot("Robby", 2017, "John");
 let robot2 = new Robot("Rosie", 2018, "Mary");
 
+let game = new Game();
+
+robot1.__proto__.__proto__ = Game.prototype;
+robot2.__proto__.__proto__ = Game.prototype;
+
+let level = game.level;
+
+
+do {
+    level = game.play(level);
+} while (level <= 10);
+robot1.deployLaser();
+robot2.deployLaser();
